@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1116/1116453.png" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather Forecast</h1>
+      <div class="search-container">
+        <div class="search-box">
+          <input id="city-input" placeholder="Enter city name..." />
+          <div class="button-group">
+            <button id="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+            <button id="location-btn" aria-label="Use current location"><i class="fas fa-location-arrow"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="unit-toggle">
+        <button id="celsius-btn" class="toggle-btn active">°C</button>
+        <button id="fahrenheit-btn" class="toggle-btn">°F</button>
+      </div>
+    </header>
+
+    <div class="error-message" id="error-message"></div>
+    <div class="loading" id="loading">
+      <div class="spinner"><i class="fas fa-spinner fa-spin fa-2x"></i></div>
+      <p>Loading weather data...</p>
+    </div>
+
+    <div class="weather-card" id="current-weather" style="display: none;">
+      <h2 id="city-name">--</h2>
+      <p id="date-time">--</p>
+      <div id="weather-icon"><i class="fas fa-question"></i></div>
+      <div id="temperature">--</div>
+      <p id="weather-description">--</p>
+      <div class="weather-details">
+        <div class="detail-item"><span class="detail-label">Feels Like: </span><span class="detail-value" id="feels-like">--</span></div>
+        <div class="detail-item"><span class="detail-label">Humidity: </span><span class="detail-value" id="humidity">--</span></div>
+        <div class="detail-item"><span class="detail-label">Wind: </span><span class="detail-value" id="wind-speed">--</span></div>
+        <div class="detail-item"><span class="detail-label">Pressure: </span><span class="detail-value" id="pressure">--</span></div>
+      </div>
+    </div>
+
+    <h3 class="forecast-title" style="text-align:center; color:white;">5-Day Forecast</h3><br>
+    <div class="forecast-container" id="forecast-container"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
